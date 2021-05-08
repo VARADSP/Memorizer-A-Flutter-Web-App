@@ -4,7 +4,7 @@ import 'package:firebase_example/services/database.dart';
 import 'package:firebase_example/shared/loading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_example/shared/constants.dart';
+import 'package:firebase_example/shared/widgets.dart';
 import 'package:provider/provider.dart';
 
 class NotesEditForm extends StatefulWidget {

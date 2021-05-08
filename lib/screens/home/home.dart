@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_example/models/note.dart';
+import 'package:firebase_example/screens/home/chat_app/chatroomscreen.dart';
 import 'package:firebase_example/screens/home/notes_add_form.dart';
 import 'package:firebase_example/screens/home/notes_edit_form.dart';
 import 'package:firebase_example/screens/home/settings_form.dart';
@@ -27,12 +28,9 @@ class _HomeState extends State<Home> {
 
   static List<Widget> _widgetOptions = <Widget>[
     NoteList(),
+    ChatRoom(),
     Text(
-      'Index 1: Chat',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Locate',
+      'Index 2: Under Progress',
       style: optionStyle,
     ),
     Text(
@@ -74,27 +72,30 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.brown[100],
       appBar: AppBar(
-        title: Text('Memorizer',style: TextStyle(color: Colors.amberAccent,fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.brown[400],
-        elevation: 0.0,
+        title: Row(
+          children: [
+            Icon(Icons.memory,color: Colors.pink,size: 30,),
+            Text('Memorizer',style: TextStyle(color: Colors.amberAccent,fontWeight: FontWeight.bold),),
+          ],
+        ),
         actions: <Widget>[
           FlatButton.icon(
-            icon:Icon(Icons.person),
-            label: Text('Logout'),
+            icon:Icon(Icons.person,color: Colors.white54,),
+            label: Text('Logout',style: TextStyle(color: Colors.white54),),
             onPressed: () async{
               await _auth.signOut();
             },
           ),
-          FlatButton.icon(
-            icon: Icon(Icons.settings),
-            label:Text('settings'),
-            onPressed: ()=>_showSettingsPanel(),
-          )
+          // FlatButton.icon(
+          //   icon: Icon(Icons.settings),
+          //   label:Text('settings'),
+          //   onPressed: ()=>_showSettingsPanel(),
+          // )
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: "Add Note Btn",
         backgroundColor: Colors.pink,
         tooltip: 'Add a note',
         child: Icon(Icons.add),

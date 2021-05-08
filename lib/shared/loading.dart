@@ -22,7 +22,7 @@ class LoadingForInputForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SpinKitHourGlass(
-        color: Colors.brown,
+        color: Colors.blue,
         size: 50.0,
       ),
     );
@@ -33,7 +33,7 @@ class LoadingForInnerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.brown[100],
+      color: Color(0xff1F1F1F),
       child: Center(
         child: SpinKitFadingCircle(
           color: Colors.pink,

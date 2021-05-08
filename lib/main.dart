@@ -28,15 +28,10 @@ class MyApp extends StatelessWidget {
         title: 'Memorizer',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          // This is the theme of your application.
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          primarySwatch: Colors.blue,
+            primaryColor: Color(0xff145c9E),
+            scaffoldBackgroundColor: Color(0xff1F1F1F),
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity
         ),
         home: IntroScreen(),
       ),
@@ -60,7 +55,6 @@ class IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
     super.initState();
-
     icons.add(Icons.note);
     slides.add(
       new Slide(
@@ -207,7 +201,7 @@ class IntroScreenState extends State<IntroScreen> {
           child: ListView(
             children: <Widget>[
               GestureDetector(
-                  child: Icon(icon,size: 200,)
+                  child: Icon(icon,size: 200,color: Colors.white,)
               ),
               Container(
                 child: Text(
@@ -262,7 +256,7 @@ class IntroScreenState extends State<IntroScreen> {
       // Tabs
       listCustomTabs: this.renderListCustomTabs(),
 
-      backgroundColorAllSlides: Colors.brown,
+      backgroundColorAllSlides: Color(0xff1F1F1F),
 
       refFuncGoToTab: (refFunc) {
         this.goToTab = refFunc;

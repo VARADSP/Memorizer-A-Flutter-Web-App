@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_example/models/user.dart';
 import 'package:firebase_example/services/database.dart';
+import 'package:firebase_example/shared/helperFunctions.dart';
 
 class AuthService{
 
@@ -61,9 +62,20 @@ class AuthService{
     }
   }
 
+  Future resetPass(String email) async{
+    try{
+      return await _auth.sendPasswordResetEmail(email: email);
+    }
+    catch(e){
+      print(e.toString());
+    }
+  }
+
+
   //sign out
   Future signOut() async{
     try{
+      HelperFunctions.clearSharedPreference();
       return await _auth.signOut();
     }
     catch(e){

@@ -37,6 +37,7 @@ dependencies:
   flutter_spinkit: ^4.1.2
   provider: ^5.0.0
   keyboard_avoider: ^0.1.2
+  shared_preferences: ^2.0.5
   intro_slider: ^2.4.1
 
 
