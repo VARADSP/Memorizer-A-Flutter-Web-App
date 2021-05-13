@@ -1,4 +1,4 @@
-# FlatApp-Flutter
+# Memorizer-Flutter_Web_App
 
 A open-source flutter project designed with Firebase Firestore as backend,hosted with Firebase hosting. It uses native flutter dart designs for UI.
 

@@ -33,14 +33,16 @@ class _SearchScreenState extends State<SearchScreen> {
   initiateSearch(){
     setState(() {
       isSearched=true;
+      searchSnapshot=null;
     });
-    databaseMethods.getUserByUsername(searchTextEditingController.text.trim().toLowerCase())
+    databaseMethods.getUserByUsername(searchTextEditingController.text.trim())
         .then((val){
       // print(val.toString());
       setState(() {
         searchSnapshot = val;
       });
     });
+
   }
 
   ///create chatroom, send user to conversation screen,pushreplacement

@@ -10,11 +10,11 @@ class AuthService{
 
   //create user object based on firebase user
   OurUser _userFromFirebaseUser(User user){
-    return user!=null?OurUser(uid:user.uid,name: user.email):null;
+    return user!=null?OurUser(uid:user.uid,email: user.email):null;
   }
 // Create user object on Firebase user
   OurUser _userFromFirebase(User user) {
-    return user != null ? OurUser(uid: user.uid,name: user.email) : null;
+    return user != null ? OurUser(uid: user.uid,email: user.email) : null;
   }
 
   Stream<OurUser> get user {

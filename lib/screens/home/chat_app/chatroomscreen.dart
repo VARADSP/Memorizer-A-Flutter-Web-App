@@ -59,7 +59,6 @@ class _ChatRoomState extends State<ChatRoom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         floatingActionButton: FloatingActionButton(
           heroTag: "Search Btn",
           child: Icon(Icons.search),
@@ -69,7 +68,10 @@ class _ChatRoomState extends State<ChatRoom> {
             ));
           },
         ),
-        body: chatRoomList()
+        body: Stack(children: [
+          Center(child: Text('Chat Rooms',style: TextStyle(color: Colors.white38))),
+          chatRoomList()
+        ])
     );
   }
 }

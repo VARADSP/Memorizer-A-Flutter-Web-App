@@ -1,7 +1,7 @@
 class OurUser{
   final String uid;
-  final String name;
-  OurUser({this.uid,this.name});
+  final String email;
+  OurUser({this.uid,this.email});
 }
 class UserData{
   final String uid;

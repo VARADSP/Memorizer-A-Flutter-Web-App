@@ -2,6 +2,7 @@ import 'package:firebase_example/models/note.dart';
 import 'package:firebase_example/models/user.dart';
 import 'package:firebase_example/screens/home/story_tile.dart';
 import 'package:firebase_example/services/database.dart';
+import 'package:firebase_example/shared/constants.dart';
 import 'package:firebase_example/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -23,7 +24,8 @@ class _NoteListState extends State<NoteList> {
     //   print(notes);
     //  }
     //final notes = null;
-
+    Constants.myId = user.uid;
+    Constants.myEmail = user.email;
     return StreamBuilder(
       stream: FirebaseFirestore.instance.collection(user.uid).orderBy('color',descending: true).snapshots(),
       builder: (context,snapshots){

@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_example/models/note.dart';
+import 'package:firebase_example/screens/home/calculator/calculator.dart';
 import 'package:firebase_example/screens/home/chat_app/chatroomscreen.dart';
 import 'package:firebase_example/screens/home/notes_add_form.dart';
 import 'package:firebase_example/screens/home/notes_edit_form.dart';
 import 'package:firebase_example/screens/home/settings_form.dart';
 import 'package:firebase_example/screens/home/stories_list.dart';
+import 'package:firebase_example/screens/home/storyboard/storyboard.dart';
 import 'package:firebase_example/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_example/services/database.dart';
@@ -20,6 +22,7 @@ class _HomeState extends State<Home> {
 
   final AuthService _auth = AuthService();
 
+  bool showFloatingActionButton = true;
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -29,18 +32,18 @@ class _HomeState extends State<Home> {
   static List<Widget> _widgetOptions = <Widget>[
     NoteList(),
     ChatRoom(),
-    Text(
-      'Index 2: Under Progress',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Calculator',
-      style: optionStyle,
-    ),
+    StoryBoard(),
+    Calculator(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
+      if(index==0){
+        showFloatingActionButton = true;
+      }
+      else{
+        showFloatingActionButton=false;
+      }
       _selectedIndex = index;
     });
   }
@@ -62,13 +65,9 @@ class _HomeState extends State<Home> {
     }
 
     void _showNotesAddPanel(){
-      showModalBottomSheet(context: context,
-          builder: (context){
-            return Container(
-              padding: EdgeInsets.symmetric(vertical: 20,horizontal: 60),
-              child: NotesAddForm(),
-            );
-          });
+      Navigator.push(context,MaterialPageRoute(
+          builder: (context) => NotesAddForm()
+      ));
     }
 
     return Scaffold(
@@ -81,8 +80,8 @@ class _HomeState extends State<Home> {
         ),
         actions: <Widget>[
           FlatButton.icon(
-            icon:Icon(Icons.person,color: Colors.white54,),
-            label: Text('Logout',style: TextStyle(color: Colors.white54),),
+            icon:Icon(Icons.person,color: Colors.red,),
+            label: Text('Logout',style: TextStyle(color: Colors.redAccent),),
             onPressed: () async{
               await _auth.signOut();
             },
@@ -94,14 +93,17 @@ class _HomeState extends State<Home> {
           // )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        heroTag: "Add Note Btn",
-        backgroundColor: Colors.pink,
-        tooltip: 'Add a note',
-        child: Icon(Icons.add),
-        onPressed: (){
-          _showNotesAddPanel();
-        },
+      floatingActionButton: Visibility(
+        visible: showFloatingActionButton,
+        child: FloatingActionButton(
+          heroTag: "Add Note Btn",
+          backgroundColor: Colors.pink,
+          tooltip: 'Add a note',
+          child: Icon(Icons.add),
+          onPressed: (){
+            _showNotesAddPanel();
+          },
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

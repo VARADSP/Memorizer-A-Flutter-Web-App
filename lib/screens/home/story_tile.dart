@@ -19,16 +19,19 @@ class _NoteTileState extends State<NoteTile> {
   Widget build(BuildContext context) {
 
     final user = Provider.of<OurUser>(context);
-    print(user.name);
+    print(user.email);
 
     void _showNotesEditPanel(bool isEdit,Note note){
-      showModalBottomSheet(context: context,
-          builder: (context){
-            return Container(
-              padding: EdgeInsets.symmetric(vertical: 20,horizontal: 60),
-              child: NotesEditForm(isEdit: isEdit,note:note),
-            );
-          });
+      Navigator.push(context,MaterialPageRoute(
+          builder: (context) => NotesEditForm(isEdit: isEdit,note: note)
+      ));
+      // showModalBottomSheet(context: context,
+      //     builder: (context){
+      //       return Container(
+      //         padding: EdgeInsets.symmetric(vertical: 20,horizontal: 60),
+      //         child: NotesEditForm(isEdit: isEdit,note:note),
+      //       );
+      //     });
     }
 
 

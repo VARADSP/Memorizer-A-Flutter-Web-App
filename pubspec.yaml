@@ -36,9 +36,23 @@ dependencies:
   google_sign_in: ^5.0.2
   flutter_spinkit: ^4.1.2
   provider: ^5.0.0
+  math_expressions: ^2.1.1
+  google_fonts: ^2.0.0
   keyboard_avoider: ^0.1.2
   shared_preferences: ^2.0.5
+  fluttertoast: ^8.0.6
   intro_slider: ^2.4.1
+  image_picker: ^0.7.4
+  geolocator: ^7.0.3
+  geocoder: ^0.2.1
+  file_picker: ^3.0.1
+  image_picker_web_redux: any
+  uuid: ^3.0.4
+  path_provider: ^2.0.1
+  image: ^3.0.2
+  image_whisperer: ^0.11.1
+  firebase_storage: ^8.0.6
+  flutter_signin_button: ^2.0.0
 
 
 
