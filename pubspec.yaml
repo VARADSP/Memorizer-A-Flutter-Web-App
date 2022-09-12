@@ -29,29 +29,29 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   firebase_core: ^1.1.0
-  firebase_auth: ^1.1.2
-  firebase_analytics: ^8.0.2
-  cloud_firestore: ^1.0.7
+  firebase_auth: ^3.8.0
+  firebase_analytics: ^9.3.4
+  cloud_firestore: ^3.4.7
   firebase: ^9.0.1
   google_sign_in: ^5.0.2
-  flutter_spinkit: ^4.1.2
-  provider: ^5.0.0
+  flutter_spinkit: ^5.1.0
+  provider: ^6.0.3
   math_expressions: ^2.1.1
-  google_fonts: ^2.0.0
+  google_fonts: ^3.0.1
   keyboard_avoider: ^0.1.2
   shared_preferences: ^2.0.5
   fluttertoast: ^8.0.6
-  intro_slider: ^2.4.1
-  image_picker: ^0.7.4
-  geolocator: ^7.0.3
+  intro_slider: ^3.0.10
+  image_picker: ^0.8.5+3
+  geolocator: ^9.0.1
   geocoder: ^0.2.1
-  file_picker: ^3.0.1
+  file_picker: ^5.0.1
   image_picker_web_redux: any
   uuid: ^3.0.4
   path_provider: ^2.0.1
   image: ^3.0.2
   image_whisperer: ^0.11.1
-  firebase_storage: ^8.0.6
+  firebase_storage: ^10.3.8
   flutter_signin_button: ^2.0.0
 
 

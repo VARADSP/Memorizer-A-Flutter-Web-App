@@ -24,8 +24,8 @@ class _SearchScreenState extends State<SearchScreen> {
         shrinkWrap: true,
         itemBuilder: (context,index){
           return SearchTile(
-            userName: searchSnapshot.docs[index].data()["name"],
-            userEmail: searchSnapshot.docs[index].data()["email"],
+            userName: (searchSnapshot.docs[index].data() as dynamic)["name"],
+            userEmail: (searchSnapshot.docs[index].data() as dynamic)["email"],
           );
         }):(isSearched?Center(child: SpinKitHourGlass(color: Colors.blue)):Container());
   }

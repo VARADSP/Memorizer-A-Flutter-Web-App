@@ -1,13 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_example/models/user.dart';
-import 'package:firebase_example/screens/home/home.dart';
 import 'package:firebase_example/services/auth.dart';
 import 'package:firebase_example/services/database.dart';
 import 'package:firebase_example/shared/helperFunctions.dart';
 import 'package:firebase_example/shared/widgets.dart';
 import 'package:firebase_example/shared/loading.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {
 
@@ -119,7 +116,7 @@ class _SignInState extends State<SignIn> {
                         databaseMethods.getUserByEmail(emailTextEditingController.text)
                             .then((val){
                           snapshotUserInfo = val;
-                          HelperFunctions.saveUserNameInSharedPreference(snapshotUserInfo.docs[0].data()["name"]);
+                          HelperFunctions.saveUserNameInSharedPreference((snapshotUserInfo.docs[0].data() as dynamic)["name"]);
                         });
 
                         dynamic result = await _auth.signInWithEmailAndPassword(email.trim(), password.trim());

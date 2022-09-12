@@ -2,9 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_example/screens/home/storyboard/models/user.dart';
 import 'package:firebase_example/screens/home/storyboard/pages/HomePage.dart';
 import 'package:firebase_example/screens/home/storyboard/storyboard.dart';
-import 'package:firebase_example/screens/home/storyboard/widgets/HeaderWidget.dart';
 import 'package:firebase_example/screens/home/storyboard/widgets/ProgressWidget.dart';
-import 'package:firebase_example/shared/widgets.dart';
 import "package:flutter/material.dart";
 
 class EditProfilePage extends StatefulWidget {

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_example/models/user.dart';
 import 'package:firebase_example/screens/home/storyboard/pages/NotificationsPage.dart';
 import 'package:firebase_example/screens/home/storyboard/pages/ProfilePage.dart';
 import 'package:firebase_example/screens/home/storyboard/pages/SearchPage.dart';
@@ -12,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:provider/provider.dart';
 
 final GoogleSignIn gSignIn= GoogleSignIn();
 final userReference = FirebaseFirestore.instance.collection('users');

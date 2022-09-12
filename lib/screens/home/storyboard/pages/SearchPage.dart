@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_example/screens/home/storyboard/widgets/ProgressWidget.dart';
 import 'package:firebase_example/services/database.dart';
 import 'package:flutter/material.dart';
 
@@ -81,7 +80,7 @@ class _SearchPageState extends State<SearchPage> with AutomaticKeepAliveClientMi
       itemCount: futureSearchResult.docs.length,
       shrinkWrap: true,
       itemBuilder: (context,index){
-               return  UserResult(userName: futureSearchResult.docs[index].data()["name"],userEmail: futureSearchResult.docs[index].data()["email"],);
+               return  UserResult(userName: (futureSearchResult.docs[index].data() as dynamic)["name"],userEmail: (futureSearchResult.docs[index].data() as dynamic)["email"],);
       },
     );
   }

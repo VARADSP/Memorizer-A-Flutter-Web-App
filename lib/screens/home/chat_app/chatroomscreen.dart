@@ -1,4 +1,3 @@
-import 'package:firebase_example/screens/authenticate/authenticate.dart';
 import 'package:firebase_example/screens/home/chat_app/conversationscreen.dart';
 import 'package:firebase_example/screens/home/chat_app/search.dart';
 import 'package:firebase_example/services/auth.dart';

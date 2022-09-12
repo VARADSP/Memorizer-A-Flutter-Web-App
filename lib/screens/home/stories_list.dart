@@ -1,7 +1,6 @@
 import 'package:firebase_example/models/note.dart';
 import 'package:firebase_example/models/user.dart';
 import 'package:firebase_example/screens/home/story_tile.dart';
-import 'package:firebase_example/services/database.dart';
 import 'package:firebase_example/shared/constants.dart';
 import 'package:firebase_example/shared/loading.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_example/screens/home/storyboard/models/user.dart';
 import 'package:firebase_example/screens/home/storyboard/pages/EditProfilePage.dart';
 import 'package:firebase_example/screens/home/storyboard/storyboard.dart';
 import 'package:firebase_example/screens/home/storyboard/widgets/HeaderWidget.dart';

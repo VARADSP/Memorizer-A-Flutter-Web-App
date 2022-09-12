@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_example/models/note.dart';
-import 'package:firebase_example/models/user.dart';
 
 class DatabaseService{
   final String uid;
@@ -51,10 +50,10 @@ class DatabaseService{
   List<Note> _noteListFromSnapshot(QuerySnapshot snapshot){
     return snapshot.docs.map((doc) {
       return Note(
-        title: doc.data()['title']??'',
-        description: doc.data()['description']??'',
-        timestamp: doc.data()['timestamp']??'',
-        color: doc.data()['color']??'',
+        title:  (doc.data() as dynamic)['title']??'',
+        description: (doc.data() as dynamic)['description']??'',
+        timestamp: (doc.data() as dynamic)['timestamp']??'',
+        color: (doc.data() as dynamic)['color']??'',
       );
     }).toList();
   }
@@ -106,7 +105,7 @@ class DatabaseService{
   }
 
   getConversationMessages(String chatRoomId) async{
-    return await FirebaseFirestore.instance.collection('ChatRoom')
+    return FirebaseFirestore.instance.collection('ChatRoom')
         .doc(chatRoomId)
         .collection('chats')
         .orderBy('time')
@@ -114,7 +113,7 @@ class DatabaseService{
   }
 
   getChatRooms(String userName) async{
-    return await FirebaseFirestore.instance
+    return FirebaseFirestore.instance
         .collection('ChatRoom')
         .where("users",arrayContains: userName)
         .snapshots();

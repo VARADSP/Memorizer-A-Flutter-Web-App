@@ -1,16 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_example/models/note.dart';
 import 'package:firebase_example/screens/home/calculator/calculator.dart';
 import 'package:firebase_example/screens/home/chat_app/chatroomscreen.dart';
 import 'package:firebase_example/screens/home/notes_add_form.dart';
-import 'package:firebase_example/screens/home/notes_edit_form.dart';
 import 'package:firebase_example/screens/home/settings_form.dart';
 import 'package:firebase_example/screens/home/stories_list.dart';
 import 'package:firebase_example/screens/home/storyboard/storyboard.dart';
 import 'package:firebase_example/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_example/services/database.dart';
-import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
 

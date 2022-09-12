@@ -1,4 +1,3 @@
-import 'package:firebase_example/screens/home/storyboard/widgets/CImageWidget.dart';
 import 'package:firebase_example/screens/home/storyboard/widgets/PostWidget.dart';
 import 'package:flutter/material.dart';
 

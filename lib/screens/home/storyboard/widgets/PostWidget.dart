@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_example/screens/home/storyboard/models/user.dart';
 import 'package:firebase_example/screens/home/storyboard/storyboard.dart';
-import 'package:firebase_example/screens/home/storyboard/widgets/CImageWidget.dart';
 import 'package:firebase_example/screens/home/storyboard/widgets/ProgressWidget.dart';
 import 'package:firebase_example/shared/constants.dart';
 import 'package:flutter/material.dart';

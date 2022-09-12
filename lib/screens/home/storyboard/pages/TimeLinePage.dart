@@ -41,13 +41,13 @@ class _TimeLinePageState extends State<TimeLinePage> {
         return new ListView(
           children: snapshot.data.docs.map((DocumentSnapshot document) {
             return new Post(
-            postId: document.data()['postId'],
-            ownerId: document.data()['ownerId'],
-            url: document.data()['url'],
-            location: document.data()['location'],
-            description: document.data()['description'],
-            username: document.data()['username'],
-            likes: document.data()['likes'],
+            postId: (document.data() as dynamic)['postId'],
+            ownerId: (document.data() as dynamic)['ownerId'],
+            url: (document.data() as dynamic)['url'],
+            location: (document.data() as dynamic)['location'],
+            description: (document.data() as dynamic)['description'],
+            username: (document.data() as dynamic)['username'],
+            likes: (document.data() as dynamic)['likes'],
             );
           }).toList(),
         );

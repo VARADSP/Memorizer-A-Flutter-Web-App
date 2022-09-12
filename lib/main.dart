@@ -1,18 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_example/screens/home/calculator/calculator.dart';
-import 'package:firebase_example/screens/home/storyboard/storyboard.dart';
 import 'package:firebase_example/screens/wrapper.dart';
 import 'package:firebase_example/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'models/user.dart';
-import 'package:intro_slider/dot_animation_enum.dart';
-import 'package:intro_slider/intro_slider.dart';
-import 'package:intro_slider/slide_object.dart';
-import 'package:intro_slider/scrollbar_behavior_enum.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -236,8 +228,6 @@ class IntroScreenState extends State<IntroScreen> {
     return new IntroSlider(
       // Skip button
       renderSkipBtn: this.renderSkipBtn(),
-      colorSkipBtn: Color(0x33ffcc5c),
-      highlightColorSkipBtn: Color(0xffffcc5c),
       renderPrevBtn: this.renderPrevBtn(),
       // Next button
       renderNextBtn: this.renderNextBtn(),
@@ -247,14 +237,11 @@ class IntroScreenState extends State<IntroScreen> {
       renderDoneBtn: this.renderDoneBtn(),
       onDonePress: this.onDonePress,
       onSkipPress: this.onSkipPress,
-      colorDoneBtn: Color(0x33ffcc5c),
-      highlightColorDoneBtn: Color(0xffffcc5c),
-
+      colorActiveDot: Color(0x33ffcc5c),
       // Dot indicator
       colorDot: Colors.pink,
       sizeDot: 13.0,
-      typeDotAnimation: dotSliderAnimation.SIZE_TRANSITION,
-
+      typeDotAnimation: DotSliderAnimation.SIZE_TRANSITION,
       // Tabs
       listCustomTabs: this.renderListCustomTabs(),
 

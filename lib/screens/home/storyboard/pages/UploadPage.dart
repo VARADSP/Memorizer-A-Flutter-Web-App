@@ -1,20 +1,16 @@
-import 'dart:convert';
 import 'dart:html' as html;
-import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_example/screens/home/storyboard/widgets/ProgressWidget.dart';
 import 'package:firebase_example/shared/constants.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/painting.dart';  // NetworkImage
+// NetworkImage
 import 'package:image_picker_web_redux/image_picker_web_redux.dart';
 import 'package:image_whisperer/image_whisperer.dart';  //
 import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
-import 'package:image/image.dart' as ImD;
 
 class UploadPage extends StatefulWidget {
   @override
