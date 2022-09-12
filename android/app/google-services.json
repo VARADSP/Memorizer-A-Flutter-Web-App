@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:831961227421:android:7237a4adc30839a56d7474",
+        "android_client_info": {
+          "package_name": "com.example.chat_app_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831961227421-va0jgemucp89fop7sfo5tr575k75mgu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjOspHNjQg11d0y0odWXzIRPr2xHzt6dw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831961227421-va0jgemucp89fop7sfo5tr575k75mgu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:831961227421:android:f145a1f64c0678876d7474",
         "android_client_info": {
           "package_name": "io.vsp.firebaseexample"
