@@ -77,8 +77,15 @@ class _NotesEditFormState extends State<NotesEditForm> {
                               widget.note.color = val.round();
                             }),
                           ):Text((widget.note.color >= 600)?' Highly Important':(widget.note.color>=300)?'Important':''),
-                          widget.isEdit?RaisedButton(
-                            color: Colors.pink[400],
+                          widget.isEdit?ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.pink[400],
+                              elevation: 5,
+                              padding: const EdgeInsets.all(12.0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                              ),
+                            ),
                             child: Text(
                               'Update',
                               style: TextStyle(color: Colors.white),

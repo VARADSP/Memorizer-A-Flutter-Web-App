@@ -64,9 +64,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
       // );
     }
 
-    SnackBar successSnackBar = SnackBar(content:Text("Profile has been updated successfully"));
-    _scaffoldGlobalKey.currentState.showSnackBar(successSnackBar);
-
+    final snackBar = SnackBar(content: Text('Profile has been updated successfully'));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
   }
 
@@ -104,7 +103,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 29,left: 50,right: 50),
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       onPressed: updateUserData,
                       child: Text(
                         "        Update        ",
@@ -117,8 +116,15 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 29,left: 50,right: 50),
-                    child: RaisedButton(
-                      color: Colors.red,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
+                        elevation: 5,
+                        padding: const EdgeInsets.all(12.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                      ),
                       onPressed: logoutUser,
                       child: Text(
                         "Logout",

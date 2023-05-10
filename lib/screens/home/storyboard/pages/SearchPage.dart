@@ -22,7 +22,7 @@ class _SearchPageState extends State<SearchPage> with AutomaticKeepAliveClientMi
   controlSearching(String str){
     DatabaseService().getUserByUsername(searchTextEditingController.text.trim())
         .then((val){
-      // print(val.toString());
+//      print(val.toString());
       setState(() {
         futureSearchResult = val;
       });

@@ -68,16 +68,20 @@ class _CalculatorState extends State<Calculator> {
     return Container(
       height:MediaQuery.of(context).size.height*0.1*buttonHeight,
       color: buttonColor,
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(0.0),
-          side: BorderSide(
-              color: Colors.white,
-              width: 1,
-              style: BorderStyle.solid
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.teal,
+          fixedSize: Size.fromWidth(100),
+          padding: EdgeInsets.all(16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0.0),
+            side: BorderSide(
+                color: Colors.white,
+                width: 1,
+                style: BorderStyle.solid
+            ),
           ),
         ),
-        padding: EdgeInsets.all(16),
         onPressed: ()=>buttonPressed(buttonText),
         child: Text(
           buttonText,

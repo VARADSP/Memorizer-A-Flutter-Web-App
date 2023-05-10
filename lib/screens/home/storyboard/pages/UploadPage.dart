@@ -205,10 +205,14 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
             Icon(Icons.add_photo_alternate,color: Colors.grey,size: 200,),
             Padding(
               padding:EdgeInsets.only(top:20.0),
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                  fixedSize: Size.fromWidth(100),
+                  padding: EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+                ),
                 child: Text('Upload Image',style: TextStyle(color: Colors.white,fontSize: 20),),
-                color: Colors.green,
                 onPressed: (){
                     takeImage(context);
                 },
@@ -260,7 +264,7 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
         leading: IconButton(icon:Icon(Icons.arrow_back,color: Colors.white),onPressed: clearPostInfo,),
         title:Text('New Post',style:TextStyle(fontSize: 24,color: Colors.white,fontWeight: FontWeight.bold)),
         actions: [
-          FlatButton(
+          ElevatedButton(
             onPressed: uploading?null:()=>controlUploadAndSave(),
             child: Text("Share",style: TextStyle(color: Colors.lightGreenAccent,fontWeight: FontWeight.bold,fontSize: 16),),
           ),
@@ -331,12 +335,13 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
             width: 220,
             height: 110,
             alignment: Alignment.center,
-            child: RaisedButton.icon(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(35),
-
-              ),
-              color: Colors.green,
+            child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                  fixedSize: Size.fromWidth(100),
+                  padding: EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+                ),
               icon: Icon(Icons.location_on,color:Colors.white),
               label:Text("Get my Current Location",style:TextStyle(color:Colors.white)),
               onPressed: (){

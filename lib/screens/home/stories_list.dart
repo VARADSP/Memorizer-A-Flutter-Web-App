@@ -1,5 +1,6 @@
 import 'package:firebase_example/models/note.dart';
 import 'package:firebase_example/models/user.dart';
+import 'package:firebase_example/screens/home/notes_add_form.dart';
 import 'package:firebase_example/screens/home/story_tile.dart';
 import 'package:firebase_example/shared/constants.dart';
 import 'package:firebase_example/shared/loading.dart';
@@ -25,6 +26,11 @@ class _NoteListState extends State<NoteList> {
     //final notes = null;
     Constants.myId = user.uid;
     Constants.myEmail = user.email;
+    void _showNotesAddPanel(){
+      Navigator.push(context,MaterialPageRoute(
+          builder: (context) => NotesAddForm()
+      ));
+    }
     return StreamBuilder(
       stream: FirebaseFirestore.instance.collection(user.uid).orderBy('color',descending: true).snapshots(),
       builder: (context,snapshots){
@@ -32,23 +38,38 @@ class _NoteListState extends State<NoteList> {
             return LoadingForInnerScreen();
           }
           else{
-            return Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.contain,
-                      alignment: Alignment.bottomCenter,
-                      image: NetworkImage('https://firebasestorage.googleapis.com/v0/b/fir-example-6ce04.appspot.com/o/loginlogo.png?alt=media&token=e4b28200-4e6d-4e4f-a250-e24f7262e6b0')
-                  )
+            return Scaffold(
+              floatingActionButton: Visibility(
+                child: FloatingActionButton(
+                  heroTag: "Add Note Btn",
+                  backgroundColor: Colors.pink,
+                  tooltip: 'Add a note',
+                  child: Icon(Icons.add),
+                  onPressed: (){
+                    _showNotesAddPanel();
+                  },
+                ),
               ),
-              child: ListView.builder(
-                itemCount: snapshots.data.docs.length,
-                itemBuilder: (context,index){
-                  Note note = new Note(id:snapshots.data.docs[index].id,color: snapshots.data.docs[index].data()['color'],
-                      description: snapshots.data.docs[index].data()['description'],timestamp: snapshots.data.docs[index].data()['timestamp'],
-                      title: snapshots.data.docs[index].data()['title']);
-                  return
-                    NoteTile(note:note);
-                },
+
+              body: Container(
+
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.contain,
+                        alignment: Alignment.bottomCenter,
+                        image: NetworkImage('https://firebasestorage.googleapis.com/v0/b/fir-example-6ce04.appspot.com/o/loginlogo.png?alt=media&token=e4b28200-4e6d-4e4f-a250-e24f7262e6b0')
+                    )
+                ),
+                child: ListView.builder(
+                  itemCount: snapshots.data.docs.length,
+                  itemBuilder: (context,index){
+                    Note note = new Note(id:snapshots.data.docs[index].id,color: snapshots.data.docs[index].data()['color'],
+                        description: snapshots.data.docs[index].data()['description'],timestamp: snapshots.data.docs[index].data()['timestamp'],
+                        title: snapshots.data.docs[index].data()['title']);
+                    return
+                      NoteTile(note:note);
+                  },
+                ),
               ),
             );
           }

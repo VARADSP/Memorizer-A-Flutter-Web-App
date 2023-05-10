@@ -1,3 +1,4 @@
+import 'package:firebase_example/screens/home/bubbles/bubbles.dart';
 import 'package:firebase_example/screens/home/calculator/calculator.dart';
 import 'package:firebase_example/screens/home/chat_app/chatroomscreen.dart';
 import 'package:firebase_example/screens/home/notes_add_form.dart';
@@ -25,6 +26,7 @@ class _HomeState extends State<Home> {
 
 
   static List<Widget> _widgetOptions = <Widget>[
+    Bubbles(),
     NoteList(),
     ChatRoom(),
     StoryBoard(),
@@ -33,7 +35,7 @@ class _HomeState extends State<Home> {
 
   void _onItemTapped(int index) {
     setState(() {
-      if(index==0){
+      if(index==1){
         showFloatingActionButton = true;
       }
       else{
@@ -46,7 +48,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
 
 
     void _showSettingsPanel(){
@@ -74,7 +75,7 @@ class _HomeState extends State<Home> {
           ],
         ),
         actions: <Widget>[
-          FlatButton.icon(
+          ElevatedButton.icon(
             icon:Icon(Icons.person,color: Colors.red,),
             label: Text('Logout',style: TextStyle(color: Colors.redAccent),),
             onPressed: () async{
@@ -88,20 +89,14 @@ class _HomeState extends State<Home> {
           // )
         ],
       ),
-      floatingActionButton: Visibility(
-        visible: showFloatingActionButton,
-        child: FloatingActionButton(
-          heroTag: "Add Note Btn",
-          backgroundColor: Colors.pink,
-          tooltip: 'Add a note',
-          child: Icon(Icons.add),
-          onPressed: (){
-            _showNotesAddPanel();
-          },
-        ),
-      ),
+
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bubble_chart),
+            label: 'Bubbles',
+            backgroundColor: Colors.blue,
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notes),
             label: 'Notes',

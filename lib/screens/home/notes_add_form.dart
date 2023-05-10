@@ -68,8 +68,15 @@ class _NotesAddFormState extends State<NotesAddForm> {
                             divisions: 7,
                             onChanged: (val) => setState(()=>_currentNoteColor = val.round()),
                           ),
-                          RaisedButton(
-                            color: Colors.pink[400],
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.pink[400],
+                              elevation: 5,
+                              padding: const EdgeInsets.all(12.0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                              ),
+                            ),
                             child: Text(
                               'Add',
                               style: TextStyle(color: Colors.white),

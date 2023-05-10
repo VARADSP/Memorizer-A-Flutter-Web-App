@@ -70,7 +70,7 @@ class DatabaseService{
   getUserByUsername(String userName) async{
     return await FirebaseFirestore.instance.collection('users')
         .orderBy("name")
-        .startAt([userName.toUpperCase()])
+        .startAt([userName.toLowerCase()])
         .endAt([userName.toLowerCase() + "\uf8ff"])
         .get();
   }

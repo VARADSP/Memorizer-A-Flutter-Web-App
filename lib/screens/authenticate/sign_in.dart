@@ -42,7 +42,7 @@ class _SignInState extends State<SignIn> {
           ],
         ),
         actions: <Widget>[
-          FlatButton.icon(
+          ElevatedButton.icon(
             icon: Icon(Icons.person,color: Colors.white54,),
             label: Text("Register",style: TextStyle(color: Colors.white54),),
             onPressed: (){
@@ -95,11 +95,12 @@ class _SignInState extends State<SignIn> {
                     },
                   ),
                   SizedBox(height: 20,),
-                  RaisedButton(
-                    hoverColor: Colors.blue[800],
-                    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
-                    color: Colors.blueAccent[400],
-                    padding: EdgeInsets.symmetric(horizontal: 70,vertical: 20),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blueAccent[400],
+                      padding: EdgeInsets.symmetric(horizontal: 70,vertical: 20),
+                      shape:  RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
+                    ),
                     child: Text(
                         'Sign In'
                         ,style: TextStyle(color: Colors.white),

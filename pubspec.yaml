@@ -53,6 +53,15 @@ dependencies:
   image_whisperer: ^0.11.1
   firebase_storage: ^10.3.8
   flutter_signin_button: ^2.0.0
+  flutter_math_fork: ^0.5.0
+  firebase_core_platform_interface: 4.5.1
+  firebase_messaging: ^13.0.4
+  google_maps_flutter: ^0.4.0
+  google_maps: ^6.2.0
+  js: ^0.6.0
+  neo4driver: ^1.0.7
+
+
 
 
 

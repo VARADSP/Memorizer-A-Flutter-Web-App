@@ -106,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
   createButtonTitleAndFunction({String title,Function performFunction}){
     return Container(
       padding: EdgeInsets.only(top: 3),
-      child: FlatButton(
+      child: ElevatedButton(
         onPressed: performFunction,
         child: Container(
           width: 245,

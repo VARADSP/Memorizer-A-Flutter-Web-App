@@ -63,8 +63,12 @@ class _SettingsFormState extends State<SettingsForm> {
                       divisions: 7,
                       onChanged: (val) => setState(()=>_currentColorStrength = val.round()),
                     ),
-                    RaisedButton(
-                      color: Colors.pink[400],
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0)),
+                        padding: const EdgeInsets.all(12.0),
+                        primary: Colors.pink[400],
+                      ),
                       child: Text(
                         'Update',
                         style: TextStyle(color: Colors.white),
